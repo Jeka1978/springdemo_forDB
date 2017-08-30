@@ -7,6 +7,9 @@
 
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <bean class="com.db.quoters.bpp.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <bean class="com.db.quoters.bpp.BeanDefinitionCorrectnessSentinelBeanFactoryPostProcessor"/>
+
 
 
     <bean id="anotherQuote" class="java.lang.String">
@@ -25,7 +28,7 @@
     </bean>
 
 
-    <bean id="terminatorQuoter" class="com.db.quoters.TerminatorQuoter">
+    <bean id="terminatorQuoter" class="com.db.quoters.TerminatorQuoter" destroy-method="killAll">
         <property name="messages">
             <list value-type="java.lang.String">
                 <value>I need your close</value>
