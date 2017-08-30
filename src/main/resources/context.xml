@@ -8,6 +8,7 @@
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
+
     <bean id="anotherQuote" class="java.lang.String">
         <constructor-arg value="Astalista baby"/>
     </bean>
