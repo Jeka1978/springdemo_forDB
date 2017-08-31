@@ -17,23 +17,9 @@ import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_PROT
 @ComponentScan
 public class ColorConfig {
     private Random random = new Random();
-    @Autowired
-    private ApplicationContext context;
-
 
     @Bean
-    public ColorFrame colorFrame() {
-        return new ColorFrame() {
-            @Override
-            protected Color getColorBean() {
-                return color();
-            }
-        };
-    }
-
-
-    @Scope("prototype")
-    @Bean
+    @Scope(value = "prototype",proxyMode = ScopedProxyMode.TARGET_CLASS)
     public Color color() {
         Color color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
 

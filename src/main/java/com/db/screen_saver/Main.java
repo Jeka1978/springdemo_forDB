@@ -10,7 +10,7 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.db.screen_saver");
         while (true) {
             context.getBean(ColorFrame.class).moveToRandomLocation();
-            Thread.sleep(50);
+            Thread.sleep(200);
         }
     }
 }

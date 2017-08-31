@@ -14,7 +14,9 @@ import java.util.Random;
  * Created by Evegeny on 31/08/2017.
  */
 
-public abstract class ColorFrame extends JFrame {
+@Service
+public class ColorFrame extends JFrame {
+    @Autowired
     private Color color;
 
 
@@ -23,19 +25,23 @@ public abstract class ColorFrame extends JFrame {
 
     @PostConstruct
     private void init(){
+        System.out.println(color.getClass());
+        System.out.println(color.toString());
+        System.out.println(color.toString());
+        System.out.println(color.toString());
+        System.out.println(color.toString());
+        System.out.println(color.toString());
         setSize(150,150);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
 
     public void moveToRandomLocation() {
-        color = getColorBean();
         setLocation(random.nextInt(1500),random.nextInt(900));
         getContentPane().setBackground(color);
         repaint();
     }
 
-    protected abstract Color getColorBean() ;
 }
 
 
