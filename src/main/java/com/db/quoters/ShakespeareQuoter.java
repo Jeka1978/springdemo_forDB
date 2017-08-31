@@ -1,12 +1,15 @@
 package com.db.quoters;
 
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Evegeny on 30/08/2017.
  */
+@Component
 public class ShakespeareQuoter implements Quoter {
-    @Setter
+    @Value("${shake}")
     private String message;
 
     @InjectRandomInt(min = 3, max = 6)

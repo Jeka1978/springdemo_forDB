@@ -2,20 +2,30 @@ package com.db.quoters;
 
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Evegeny on 30/08/2017.
  */
 
-@DeprecatedClass(T1000.class)
+@Transaction
+@Component
 public class TerminatorQuoter implements Quoter {
 
-    @Setter
+
     private List<String> messages;
+
+    @Value("${terminator}")
+    private void setMessages(String[] messages, @Value("${JAVA_HOME}") String javaHome) {
+        System.out.println("javaHome = " + javaHome);
+        this.messages = Arrays.asList(messages);
+    }
 
     @Override
     public void sayQuote() {
@@ -23,7 +33,7 @@ public class TerminatorQuoter implements Quoter {
     }
 
 
-    public void killAll(){
+    public void killAll() {
         System.out.println("your are terminated....");
     }
 }
