@@ -5,9 +5,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Evegeny on 31/08/2017.
@@ -18,7 +16,7 @@ public class MailSender {
     private Map<Integer, MailGenerator> map = new HashMap<>();
 
     @Autowired
-    public void initMap(List<MailGenerator> mailGenerators){
+    public void initMap(Collection<MailGenerator> mailGenerators){
         for (MailGenerator mailGenerator : mailGenerators) {
             int mailCode = mailGenerator.mailCode();
             if (map.containsKey(mailCode)) {
