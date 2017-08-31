@@ -1,6 +1,7 @@
 package com.db.quoters;
 
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * Created by Evegeny on 30/08/2017.
  */
 @Component
+@Book
 public class ShakespeareQuoter implements Quoter {
     @Value("${shake}")
     private String message;

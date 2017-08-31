@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,8 +19,12 @@ public class TalkingRobotImpl implements TalkingRobot {
 
 
     @Autowired
-    @Setter
-    private List<Quoter> quoters;
+    @Book
+    public TalkingRobotImpl(List<Quoter> quoters) {
+        this.quoters = quoters;
+    }
+
+    private List<Quoter> quoters = Arrays.asList((Quoter) () -> System.out.println("this is default quote"));
 
     @Override
     @PostConstruct
@@ -30,3 +36,6 @@ public class TalkingRobotImpl implements TalkingRobot {
 
 
 }
+
+
+
