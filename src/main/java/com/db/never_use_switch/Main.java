@@ -1,6 +1,5 @@
-package com.db.qualifiers;
+package com.db.never_use_switch;
 
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -8,6 +7,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Main {
     public static void main(String[] args) {
-        new AnnotationConfigApplicationContext("com.db.qualifiers");
+        new AnnotationConfigApplicationContext("com.db.never_use_switch");
     }
 }
