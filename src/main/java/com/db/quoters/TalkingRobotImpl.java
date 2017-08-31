@@ -19,7 +19,6 @@ public class TalkingRobotImpl implements TalkingRobot {
 
 
     @Autowired
-    @Book
     public TalkingRobotImpl(List<Quoter> quoters) {
         this.quoters = quoters;
     }

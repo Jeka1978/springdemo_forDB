@@ -9,6 +9,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @PropertySource("classpath:quotes.properties")
 @ComponentScan
+@EnableAspectJAutoProxy
 public class QuoterConfig {
 
 
