@@ -1,7 +1,9 @@
 package com.db.never_use_switch;
 
+import com.db.quoters.QuoterConfig;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**

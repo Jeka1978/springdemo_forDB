@@ -5,4 +5,5 @@ package com.db.never_use_switch;
  */
 public interface MailGenerator {
     String generateHtml();
+    int mailCode();
 }

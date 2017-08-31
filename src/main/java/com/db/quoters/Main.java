@@ -17,7 +17,7 @@ import java.util.Collection;
 
 public class Main {
     public static void main(String[] args) {
-        new AnnotationConfigApplicationContext("com.db.quoters");
+        new AnnotationConfigApplicationContext(QuoterConfig.class);
 
     }
 }
