@@ -19,7 +19,7 @@ public class ColorConfig {
     private Random random = new Random();
 
     @Bean
-    @Scope(value = "prototype",proxyMode = ScopedProxyMode.TARGET_CLASS)
+    @Scope(value = "5seconds",proxyMode = ScopedProxyMode.TARGET_CLASS)
     public Color color() {
         Color color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
 
