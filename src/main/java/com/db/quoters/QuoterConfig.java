@@ -12,6 +12,15 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @EnableAspectJAutoProxy
 public class QuoterConfig {
 
+//    @Bean
+    public Quoter str(){
+        return new Quoter() {
+            @Override
+            public void sayQuote() {
+                System.out.println("И чё???");
+            }
+        };
+    }
 
 
 }

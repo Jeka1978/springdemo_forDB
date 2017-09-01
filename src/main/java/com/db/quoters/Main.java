@@ -1,6 +1,7 @@
 package com.db.quoters;
 
 import com.db.magic.Person;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.PropertySource;
@@ -17,7 +18,17 @@ import java.util.Collection;
 
 public class Main {
     public static void main(String[] args) {
-        new AnnotationConfigApplicationContext(QuoterConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(QuoterConfig.class);
+        try {
+            context.getBean(TalkingRobot.class).talk();
+        } catch (DBRuntimeException e) {
+            System.out.println("была проблема, но мы её решили...");
+        }
+        try {
+            context.getBean(TalkingRobot.class).talk();
+        } catch (DBRuntimeException e) {
+            System.out.println("была проблема, но мы её решили...");
+        }
 
     }
 }

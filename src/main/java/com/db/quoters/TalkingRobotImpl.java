@@ -26,7 +26,6 @@ public class TalkingRobotImpl implements TalkingRobot {
     private List<Quoter> quoters = Arrays.asList((Quoter) () -> System.out.println("this is default quote"));
 
     @Override
-    @PostConstruct
     public void talk() {
         for (Quoter quoter : quoters) {
             quoter.sayQuote();

@@ -1,7 +1,5 @@
 package com.db.quoters;
 
-import lombok.Setter;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +16,9 @@ public class ShakespeareQuoter implements Quoter {
     private int repeat;
 
     @Override
+    @PostProxyPostConstruct
     public void sayQuote() {
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
         for (int i = 0; i < repeat; i++) {
             System.out.println(message);
         }

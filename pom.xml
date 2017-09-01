@@ -8,6 +8,19 @@
     <artifactId>spring-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -22,7 +35,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.3.10.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -39,10 +52,16 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspect.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.2.Final</version>
+        </dependency>
     </dependencies>
 
     <properties>
         <aspect.version>1.8.9</aspect.version>
+        <spring.version>4.3.10.RELEASE</spring.version>
     </properties>
 
 

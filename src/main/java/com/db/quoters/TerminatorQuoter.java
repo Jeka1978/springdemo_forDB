@@ -16,7 +16,6 @@ import java.util.List;
  * Created by Evegeny on 30/08/2017.
  */
 
-@Transaction
 @Component
 public class TerminatorQuoter implements Quoter {
 
@@ -32,6 +31,7 @@ public class TerminatorQuoter implements Quoter {
     @Override
     public void sayQuote() {
         messages.forEach(System.out::println);
+        throw new DBRuntimeException("я встретил сам себя");
     }
 
 
